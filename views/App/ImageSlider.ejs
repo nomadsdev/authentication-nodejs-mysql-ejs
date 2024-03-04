@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+</style>
+
+<div class="flex justify-center px-5 pt-10">
+    <div class="swiper mySwiper w-full h-full max-w-7xl">
+        <div class="swiper-wrapper">
+          <% if (images.length > 0) { %>
+          <% images.forEach(image => { %>
+          <div class="swiper-slide text-center text-sm bg-white flex justify-center items-center"><img class="block w-full h-full object-cover" src="https://placehold.co/1280x350/EEE/31343C" alt=""></div>
+          <% }); %>
+          <% } else { %>
+              <p class="text-center text-3xl text-red-600 pt-20">No images found</p>
+          <% } %>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      autoplay: {
+      delay: 3000,
+    },
+    });
+  </script>

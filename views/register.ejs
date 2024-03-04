@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สมัคสมาชิก</title>
+    <%- include('./Config/Import') %>
+</head>
+<body>
+
+    <%- include('./App/Nav') %>
+
+    <div class="flex justify-center px-5 pt-20">
+        <div class="w-full max-w-lg">
+            <div class="w-full p-5 rounded-md bg-white shadow border">
+                <h2 class="text-center text-xl text-indigo-500">สมัคสมาชิก</h2>
+                <% if (errorMessage) { %>
+                    <p class="text-red-500 bg-red-200 text-center rounded-md py-1 w-full my-2 border text-sm border-red-500"><%= errorMessage %></p>
+                <% } %>
+                <form action="/register" method="post">
+                        <div>
+                            <label for="email">ชื่อผู้ใช้ <span class="text-red-500">*</span></label>
+                            <br>
+                            <input type="text"  name="username" placeholder="ชื่อผู้ใช้" required class="border border-indigo-500 rounded-md px-2 py-1 text-sm w-full">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="email">อีเมล <span class="text-red-500">*</span></label>
+                            <br>
+                            <input type="email" name="email" placeholder="อีเมล" required class="border border-indigo-500 rounded-md px-2 py-1 text-sm w-full">
+                        </div>
+                        <br>
+                        <div>
+                            <label for="password">รหัสผ่าน <span class="text-red-500">*</span></label>
+                            <br>
+                            <input type="password" name="password" placeholder="รหัสผ่าน" required class="border border-indigo-500 rounded-md px-2 py-1 text-sm w-full">
+                        </div>
+                        <br>
+                    <button type="submit" class="w-full py-1 border border-indigo-500 text-indigo-500 rounded-md hover:bg-indigo-500 hover:text-white transition">สมัคสมาชิก</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="pt-5">
+        <p class="text-center text-xs">มีบัญชีแล้ว? <a href="/login" class="text-indigo-500">เข้าสู่ระบบ</a></p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<div class="flex justify-center px-5 md:shadow">
+    <div class="w-full max-w-7xl py-5 flex justify-between items-center">
+        <div>
+            <a href="/">LOGO</a>
+        </div>
+        <div class="md:flex gap-5 items-center hidden">
+            <a href="/">หน้าแรก</a>
+            <a href="/">ดูสินค้าทั้งหมด</a>
+            <a href="/">ติดต่อแอดมิน</a>
+            <% if (loggedIn) { %>
+            <a href="/profile" class="border border-indigo-500 text-indigo-500 px-5 py-1 rounded-md hover:bg-indigo-500 hover:text-white transition">หน้าโปรไฟล์</a>
+            <a href="/logout" class="border border-indigo-500 bg-indigo-500 text-white hover:bg-white hover:text-indigo-500 px-5 py-1 rounded-md transition">ออกสู่ระบบ</a>
+            <% } else { %>
+            <a href="/register" class="border border-indigo-500 text-indigo-500 px-5 py-1 rounded-md hover:bg-indigo-500 hover:text-white transition">สมัคสมาชิก</a>
+            <a href="/login" class="border border-indigo-500 bg-indigo-500 text-white hover:bg-white hover:text-indigo-500 px-5 py-1 rounded-md transition">เข้าสู่ระบบ</a>
+            <% } %>
+        </div>
+        <div class="flex md:hidden">
+            <button class="text-2xl" id="mobileMenuBtn">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="flex md:hidden justify-center">
+    <div id="menu" class="hidden bg-white">
+        <div class="flex justify-center px-5">
+            <div class="w-full max-w-7xl">
+                <a href="/" class="flex justify-center md:text-base text-sm hover:text-indigo-500 transition">หน้าแรก</a>
+                <a href="/" class="flex justify-center md:text-base text-sm hover:text-indigo-500 transition">ดูสินค้าทั้งหมด</a>
+                <a href="/" class="flex justify-center md:text-base text-sm hover:text-indigo-500 transition">ติดต่อแอดมิน</a>
+                <br>
+                <% if (loggedIn) { %>
+                <a href="/profile" class="border border-indigo-500 text-indigo-500 px-5 py-1 rounded-md hover:bg-indigo-500 hover:text-white transition text-sm">หน้าโปรไฟล์</a>
+                <a href="/logout" class="border border-indigo-500 bg-indigo-500 text-white hover:bg-white hover:text-indigo-500 px-5 py-1 rounded-md transition text-sm">ออกสู่ระบบ</a>
+                <% } else { %>
+                <div class="flex justify-center gap-3 pt-2">
+                    <a href="/register" class="border border-indigo-500 text-indigo-500 px-5 py-1 rounded-md hover:bg-indigo-500 hover:text-white transition md:text-base text-sm">สมัคสมาชิก</a>
+                    <a href="/login" class="border border-indigo-500 bg-indigo-500 text-white hover:bg-white hover:text-indigo-500 px-5 py-1 rounded-md transition md:text-base text-sm">เข้าสู่ระบบ</a>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const menu = document.getElementById('menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>

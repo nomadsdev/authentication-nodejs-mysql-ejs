@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include('./Config/Import') %>
+</head>
+<body>
+
+   <%- include('./App/Nav') %>
+   <%- include('./App/ImageSlider') %>
+
+   <div class="flex justify-center px-5 py-10">
+    <div class="w-full max-w-lg">
+        <div class="w-full bg-white shadow border rounded-lg p-5">
+            <a href="https://github.com/nomadsdev">
+                <div class="flex justify-center pb-3">
+                    <ion-icon name="logo-github" class="text-3xl"></ion-icon>
+                </div>
+                <div>
+                    <p class="text-center text-sm">
+                        Nomads Developer
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+   </div>
+    
+</body>
+</html>
